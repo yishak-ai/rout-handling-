@@ -2,17 +2,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+type comment = {
+  id: number;
+  body: string;
+  userId: number;
+  postId: number;
+};
 
 export default function HomePage() {
-  const [comments, setComments] = useState<any[]>([]);
-
+  const [comments, setComments] = useState<comment[]>([]);
   useEffect(() => {
-    const fetchComments = async () => {
-      const res = await fetch("/api/comments");
-      const data = await res.json();
-      setComments(data);
-    };
-    fetchComments();
+    fetch("comment")
+      .then((res) => res.json())
+      .then((data) => setComments(data));
   }, []);
 
   return (

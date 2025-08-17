@@ -1,5 +1,6 @@
 
- export const Comments = [
+type comment = {id: number, body: string, userId: number, postId: number}
+ export const Comments: comment[] = [
     {
         id: 1,
         body: "This is comment 1",
