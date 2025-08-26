@@ -1,8 +1,18 @@
 import {Comments} from "./comment";
-import {NextResponse} from "next/server";
+
+// fatching all Comments
 export async function GET() {
-    return NextResponse.json(Comments);
+    return Response.json(Comments);
 }
+
+// fatching  single or more comment by spesfic  columen value
+
+// export async function GET(request: NextRequest) {
+//     const url = new URL(request.url);
+//     const postId = url.searchParams.get("postId");
+//     const comments = Comments.filter((comment) => comment.postId == postId);
+//     return Response.json(comments);
+// }
 
 export async function POST(request: Request) {
     const comment = await request.json();

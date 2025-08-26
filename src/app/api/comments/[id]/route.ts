@@ -39,7 +39,24 @@ export async function PATCH(
   const newRequest = await request.json();
 
   // Update comment in array
+  
  const {body} = newRequest;
   Comments[commentIndex].body = body;
   return Response.json(Comments[commentIndex]) ;
+}
+
+export async function DELETE(
+  request: Request , 
+  params: {params: Promise<{id: string}>}
+
+){
+
+  const {id} = await params.params;
+  const commentId = parseInt(id, 10);
+  const commentTndex = Comments.findIndex((c)=> c.id === commentId)
+  if(commentTndex === -1){
+    return new Response(JSON.stringify({error: "comment not found"} ) ,{status: 404})
+  }
+  Comments.splice(commentTndex, 1);
+  return Response.json(Comments)
 }
