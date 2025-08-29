@@ -1,0 +1,15 @@
+
+> my-project@0.1.0 dev
+> next dev --turbopack
+
+ ⚠ Warning: Found multiple lockfiles. Selecting C:\Users\demeke\package-lock.json.
+   Consider removing the lockfiles at:
+   * C:\Users\demeke\Videos\next.js-full-course\my-project\package-lock.json
+
+ ⚠ Port 3000 is in use by process 8212, using available port 3002 instead.
+   ▲ Next.js 15.4.6 (Turbopack)
+   - Local:        http://localhost:3002
+   - Network:      http://192.168.0.134:3002
+
+ ✓ Starting...
+ ✓ Ready in 5.4s
